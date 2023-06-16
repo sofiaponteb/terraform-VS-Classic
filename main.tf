@@ -7,7 +7,7 @@ locals {
 }
 
 resource "ibm_compute_vm_instance" "virtual-server-classic" {
-  count                      = var.server_count
+  count                      = local.server_count
   hostname                   = "virtual-server-${count.index + 1}"
   domain                     = "IBM-PoC-Landing-Zone-Enterprise.cloud"
   os_reference_code          = "REDHAT_7_64"
