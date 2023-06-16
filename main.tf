@@ -7,7 +7,7 @@ locals {
   server_count_host = 2
 }
 
-resource "ibm_compute_vm_instance" "virtual-server-classic" {
+resource "ibm_compute_vm_instance" "virtual-server-classic-control-plane" {
   count                      = local.server_count_control_plane
   hostname                   = "control-plane-virtual-server-${count.index + 1}"
   domain                     = "IBM-PoC-Landing-Zone-Enterprise.cloud"
@@ -25,7 +25,7 @@ resource "ibm_compute_vm_instance" "virtual-server-classic" {
   resource_group             = var.resource_group
 }
 
-resource "ibm_compute_vm_instance" "virtual-server-classic" {
+resource "ibm_compute_vm_instance" "virtual-server-classic-host" {
   count                      = local.server_count_host
   hostname                   = "host-virtual-server-${count.index + 1}"
   domain                     = "IBM-PoC-Landing-Zone-Enterprise.cloud"
