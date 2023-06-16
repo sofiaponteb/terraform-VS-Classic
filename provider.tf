@@ -1,4 +1,3 @@
-variable "ibmcloud_api_key" {}
 variable "region" {}
 
 provider "ibm" {
