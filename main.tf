@@ -16,7 +16,7 @@ resource "ibm_compute_vm_instance" "virtual-server-classic" {
   hourly_billing             = false
   private_network_only       = false
   cores                      = 4
-  memory                     = 16
+  memory                     = 16384
   disks                      = [25]
   user_metadata              = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only   = true
