@@ -1,5 +1,5 @@
 data ibm_resource_group "resource_group" {
-    name = "Default"
+    name = "satellite-rg"
 }
 
 locals {
@@ -22,6 +22,7 @@ resource "ibm_compute_vm_instance" "virtual-server-classic" {
   user_metadata              = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only   = true
   local_disk                 = false
+  resource_group             = var.resource_group
 }
 
 resource "ibm_compute_vm_instance" "virtual-server-classic" {
@@ -39,4 +40,5 @@ resource "ibm_compute_vm_instance" "virtual-server-classic" {
   user_metadata              = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only   = true
   local_disk                 = false
+  resource_group             = var.resource_group
 }
