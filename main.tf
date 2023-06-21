@@ -18,7 +18,7 @@ resource "ibm_compute_vm_instance" "virtual-server-classic-control-plane" {
   private_network_only       = false
   cores                      = 4
   memory                     = 16384
-  disks                      = [25]
+  disks                      = [25, 150]
   user_metadata              = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only   = true
   local_disk                 = false
@@ -33,9 +33,9 @@ resource "ibm_compute_vm_instance" "virtual-server-classic-host" {
   network_speed              = 10
   hourly_billing             = false
   private_network_only       = false
-  cores                      = 16
-  memory                     = 65536
-  disks                      = [25]
+  cores                      = 4
+  memory                     = 16384
+  disks                      = [25, 250]
   user_metadata              = "{\"value\":\"newvalue\"}"
   dedicated_acct_host_only   = true
   local_disk                 = false
