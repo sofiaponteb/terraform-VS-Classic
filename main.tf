@@ -4,7 +4,7 @@ data ibm_resource_group "resource_group" {
 
 locals {
   server_count_control_plane = 3
-  server_count_host = 2
+  server_count_host = 0
 }
 
 resource "ibm_compute_vm_instance" "virtual-server-classic-control-plane" {
